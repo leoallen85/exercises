@@ -53,10 +53,7 @@ class ChanceTest < Minitest::Test
     refute(UNLIKELY > LIKELY)
     assert_raises(ArgumentError) { UNLIKELY > nil }
 
-    max = ALL.reduce do |max, chance|
-      chance > max ? chance : max
-    end
-
+    max = Chance.max(ALL)
     assert_equal(CERTAIN, max)
   end
 

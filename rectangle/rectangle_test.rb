@@ -18,4 +18,14 @@ class RectangleTest < Minitest::Test
     assert_raises(Exception) { Rectangle.new(-1, 2) }
   end
 
+  def test_max
+    rectangles = [
+      Rectangle.new(2,5),
+      Rectangle.new(3,6),
+      Rectangle.new(1,1)
+    ]
+
+    max = Rectangle.max(rectangles)
+    assert_equal(max, rectangles[1]max)
+  end
 end
